@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -20,13 +20,15 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
+      },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Francois+One&display=swap' }
+
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#ff6347' },
   /*
   ** Global CSS
   */
@@ -69,11 +71,5 @@ export default {
   /*
   ** Build configuration
   */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
-  }
+  build: {}
 }
