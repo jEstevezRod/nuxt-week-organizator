@@ -1,5 +1,5 @@
 <template>
-  <v-layout row wrap>
+  <v-layout row wrap class="animated pulse">
     <v-flex xs10 offset-xs1>
       <v-flex xs10 offset-xs1 md6 offset-md3>
         <v-text-field label="Email"></v-text-field>
@@ -18,7 +18,7 @@
       </v-flex>
       <v-flex xs10 offset-xs1 md6 offset-md3>
         <v-layout row nowrap justify-space-between align-center>
-          <a>Don't have an account yet?</a>
+          <a @click="notLogged">Don't have an account yet?</a>
           <v-btn color="info">Login</v-btn>
         </v-layout>
       </v-flex>
@@ -38,9 +38,21 @@ export default {
     },
     email: '',
     password: ''
-  })
+  }),
+  methods: {
+    notLogged() {
+      this.$emit('notLogged', false)
+    }
+  }
 }
 </script>
 
 <style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transition: opacity 0.5s;
+}
 </style>
